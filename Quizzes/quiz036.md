@@ -12,10 +12,10 @@ class Converter:
         if 0 < number <= 100:
             output = ""
             for value in [100, 90, 50, 40, 10, 9, 5, 4, 1]:
-                numeral = self.numeral_map[value]
-                quotient = number // value
+                p = self.numeral_map[value]
+                q = number // value
                 number = number % value
-                output += numeral * quotient
+                output += p * q
             return output
         else:
             return "Invalid input"
