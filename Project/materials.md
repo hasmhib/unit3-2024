@@ -14,4 +14,6 @@ Base Material: P-Tex (polyethylene compound)
 Sidewalls: ABS plastic for protection
 Wax: For smooth gliding
 
+![Image](https://github.com/hasmhib/unit3-2024/assets/142870448/48b9ca64-049c-4260-8267-377dfc3fe7a6)
+
 https://www.burton.com/jp/en/p/mens-burton-custom-camber-snowboard/W24JP-106881.html?dwvar_W24JP-106881_variationSize=154&dwvar_W24JP-106881_variationColor=10688110960 
