@@ -1,4 +1,4 @@
-## Why the client choose me?
+## Why me?
 
 ### Good Communication Skills: 
 I will keep clients inform about the progress of their projects and listen to their needs. I will protect the clients information, and I will  protect their privacy as well. 
