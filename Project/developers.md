@@ -1,10 +1,15 @@
 ## Developer profile
 
 UWC ISAK Japan
+
 Name: Yosuke Hashimoto
+
 Nationality: Japan
+
 Experiences: Basik knowledge in Python
+
 email: 2025.yosuke.hashimoto@uwcisak.jp
+
 
 ### Techinical skills:
 
