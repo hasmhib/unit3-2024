@@ -29,5 +29,6 @@ print(test.calculate_interest())
 <img width="838" alt="Screenshot 2024-01-26 at 4 55 49 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/700cb869-7a1c-4870-be1a-88e685642723">
 
 ## UML Diagram
+![image](https://github.com/hasmhib/unit3-2024/assets/142870448/46378aaf-6079-43a1-9a3c-39d658a1408b)
 
 
