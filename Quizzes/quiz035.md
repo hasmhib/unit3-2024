@@ -21,6 +21,9 @@ print(count(list1, list2))
 ## Proof of work
 <img width="max" alt="Screenshot 2024-01-14 at 4 41 47 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/4fd35487-d07f-4deb-897e-20496e0e3d48">
 
+## Flow Diagram
+![image](https://github.com/hasmhib/unit3-2024/assets/142870448/743db7b5-4e08-43b8-9580-dbc67cee8599)
+
 
 
 
