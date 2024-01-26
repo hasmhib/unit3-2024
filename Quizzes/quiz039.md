@@ -44,3 +44,5 @@ BoxLayout:
 https://github.com/hasmhib/unit3-2024/assets/142870448/24907804-898e-4f76-bdc5-d2c284c2c2fe
 
 ## UML Diagram
+![image](https://github.com/hasmhib/unit3-2024/assets/142870448/0f3bb476-29f2-4215-ab83-32f905b47347)
+
