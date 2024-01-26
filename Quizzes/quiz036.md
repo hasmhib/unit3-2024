@@ -6,13 +6,13 @@
 ```py
 class Converter:
     def __init__(self):
-        self.numeral_map = {100: "C", 90: "XC", 50: "L", 40: "XL", 10: "X", 9: "IX", 5: "V", 4: "IV", 1: "I"}
+        self.roman_digits = {100: "C", 90: "XC", 50: "L", 40: "XL", 10: "X", 9: "IX", 5: "V", 4: "IV", 1: "I"}
 
     def convert_to_roman(self, number):
         if 0 < number <= 100:
             output = ""
             for value in [100, 90, 50, 40, 10, 9, 5, 4, 1]:
-                p = self.numeral_map[value]
+                p = self.roman_digits[value]
                 q = number // value
                 number = number % value
                 output += p * q
