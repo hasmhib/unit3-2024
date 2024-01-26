@@ -39,4 +39,5 @@ c.get_map()
 
 
 ## UML Diagram
-![Uploading image.png…]()
+![image](https://github.com/hasmhib/unit3-2024/assets/142870448/87fe9c51-07a4-41ea-b665-e5333eee2e90)
+
