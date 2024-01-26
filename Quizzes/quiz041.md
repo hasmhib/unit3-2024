@@ -180,3 +180,5 @@ https://github.com/hasmhib/unit3-2024/assets/142870448/f8795a9b-6757-4763-b65c-5
 
 
 ## UML Diagram
+![image](https://github.com/hasmhib/unit3-2024/assets/142870448/ad410b95-5c6f-4879-9db0-3dcfdb197d77)
+
