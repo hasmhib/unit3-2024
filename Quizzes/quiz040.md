@@ -42,8 +42,7 @@ Screen:
 ```
 
 ## Proof of work
-https://github.com/hasmhib/unit3-2024/assets/142870448/74343372-1f9d-43b8-9d56-b6f2099c455e
-
+https://github.com/hasmhib/unit3-2024/assets/142870448/b1e8bd89-b3c6-4d11-928d-96f8fdf1eae4
 
 ## UML Diagram
 ![image](https://github.com/hasmhib/unit3-2024/assets/142870448/7a250947-85be-487d-8937-8983e7eb36ae)
