@@ -26,3 +26,6 @@ print(converter.convert_to_roman(34))
 
 ## Proof of work
 <img width="max" alt="Screenshot 2024-01-14 at 7 41 02 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/e5354117-cbe4-429c-996b-4fefefa67a60">
+
+## UML Diagram
+![image](https://github.com/hasmhib/unit3-2024/assets/142870448/80ef5e1e-a7cc-4655-b574-66b789c5f8ef)
