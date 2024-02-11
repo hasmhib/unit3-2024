@@ -2,10 +2,15 @@
 
 <img width="max" alt="Screenshot 2024-02-08 at 2 37 09 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/fc9b8628-2d5f-4db0-a3b9-b4fa6c87efb6">
 
+## Question 1
+How many tables are there in the database?
 
 ## Proof of work for Q1
 <img width="max" alt="Screenshot 2024-02-11 at 0 42 19 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/3ae20b85-e4fb-4602-bc0a-36af81c38904">
 
+
+## Question 2
+How many Male inhabitants are Friendly?
 
 ## Code for Q2
 
@@ -17,6 +22,9 @@ SELECT * from INHABITANT where gender = 'Male' and state = 'Friendly'
 <img width="max" alt="Screenshot 2024-02-11 at 0 43 52 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/b6b3b8e5-df31-41c6-b49d-2ebab48c28b3">
 
 
+## Question 3
+What is the average gold by village?
+
 ## Code for Q3
 
 ```py
@@ -26,6 +34,8 @@ SELECT villageid, avg(gold) from INHABITANT group by villageid
 ## Proof of work for Q3
 <img width="max" alt="Screenshot 2024-02-11 at 0 47 49 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/10e55292-dcd3-402d-9db3-984801548e51">
 
+## Question 4
+How many items are there that start with the letter “A”
 
 ## Code for Q4
 
@@ -37,6 +47,9 @@ SELECT count(*) from ITEM where item LIKE 'A%'
 <img width="max" alt="Screenshot 2024-02-11 at 0 50 53 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/3d53e4b0-5081-4bea-aef0-f050390759c7">
 
 
+## Question 5
+How many different jobs are there? 
+
 ## Code for Q5
 
 ```py
@@ -46,6 +59,9 @@ SELECT count(job) from INHABITANT
 ## Proof of work for Q5
 <img width="max" alt="Screenshot 2024-02-11 at 0 52 06 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/d26e062a-f813-456b-aec5-a1c882407ce9">
 
+
+## Question 6
+What are the items owned by the herbalists?
 
 ## Code for Q6
 
