@@ -1,5 +1,6 @@
 # Quiz 046
 
+<img width="max" alt="Screenshot 2024-02-15 at 1 16 53 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/6c943b90-e53c-4187-81c2-a778fe4f5692">
 
 ## Code for quiz046.py
 
