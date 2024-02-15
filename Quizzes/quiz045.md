@@ -1,5 +1,6 @@
 # Quiz 045
 
+<img width="max" alt="Screenshot 2024-02-15 at 1 16 14 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/9253304f-48c4-49d9-a487-720b2bba26d8">
 
 
 ## Code
