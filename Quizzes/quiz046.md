@@ -329,4 +329,6 @@ MDScreen:
 ```
 
 ## Proof of work
+https://github.com/hasmhib/unit3-2024/assets/142870448/d965b478-eb28-48b3-9974-cae31e5cb8c4
+
 
