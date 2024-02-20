@@ -20,13 +20,14 @@ class Airlines:
         output = f"{h} hours {m} minutes and {s} seconds"
         return output
 
-test1 = Airlines('AA123', 'New York', 'Los Angeles', "10:00AM", [5, 6, 3])
+test1 = Airlines('AA123', 'New York', 'Los Angeles', "10:00AM", [5, 30, 3])
 print(test1.get_duration())
 
 ```
 
+
 ## Proof of work
-<img width="max" alt="Screenshot 2024-02-20 at 7 17 51 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/65be4d08-0c91-4468-b37f-0617cf82fb80">
+<img width="max" alt="Screenshot 2024-02-20 at 7 18 48 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/445f32e3-4647-412b-89f3-9afddd1d2f71">
 
 ## UML Diagram
 ![image](https://github.com/hasmhib/unit3-2024/assets/142870448/74254bf9-ddaa-4c67-843d-746b28660680)
