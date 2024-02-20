@@ -39,5 +39,6 @@ print("average word length is",out)
 
 <img width="max" alt="Screenshot 2024-02-08 at 2 41 43 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/9fe419d8-40f7-4836-8e37-775a5e490cb9">
 
-## UML Diagram
-![image](https://github.com/hasmhib/unit3-2024/assets/142870448/aed48fe4-1b5a-4218-ac60-f19d1ca97b7d)
+## ER Diagram
+![image](https://github.com/hasmhib/unit3-2024/assets/142870448/7a3ed702-371a-4752-ba93-856018baf86a)
+
