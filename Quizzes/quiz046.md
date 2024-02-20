@@ -331,8 +331,8 @@ MDScreen:
 ## Proof of work
 https://github.com/hasmhib/unit3-2024/assets/142870448/d965b478-eb28-48b3-9974-cae31e5cb8c4
 
-## ER Diagram
-![image](https://github.com/hasmhib/unit3-2024/assets/142870448/0fa81cd3-b9bd-4524-913d-1c81bb0fa8d1)
+## UML Diagram
+![image](https://github.com/hasmhib/unit3-2024/assets/142870448/123ddcf1-7348-4f24-aa79-97c84132124d)
 
 
 
