@@ -26,17 +26,12 @@ SELECT account_id, balance from accounts;
 
 
 ### Compare the supposed balance and reported balance. 
-```py
-SELECT accounts.account_id , COALESCE(supposed_balances.supposed_balance, 0) AS supposed_balance, accounts.balance AS reported_balance FROM accounts
-LEFT JOIN (
-    SELECT
-        transactions.account_id,
-        SUM(CASE WHEN transactions.transaction_type = 'deposit' THEN transactions.amount ELSE -transactions.amount END) AS supposed_balance FROM transactions GROUP BY transactions.account_id
-) AS supposed_balances ON accounts.account_id = supposed_balances.account_id;
-```
-## Proof of work
-<img width="max" alt="Screenshot 2024-02-20 at 1 29 16 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/43d33730-d506-4d0e-a74d-0121b3263306">
 
+Account 12: supposed_balance 4600, reported_balance 5000 -> fraudulent transaction
+Account 13: supposed_balance 2200, reported_balance 1400 -> fraudulent transaction
+Account 15: supposed_balance 2300, reported_balance 1500 -> fraudulent transaction
+Account 17: supposed_balance 2400, reported_balance 1600 -> fraudulent transaction
+Account 19: supposed_balance 2500, reported_balance 1700 -> fraudulent transaction
 
 ## 3. What is the name of the customer and the problem that resulted in the bankruptcy of the bank?
 
