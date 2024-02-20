@@ -27,11 +27,18 @@ SELECT account_id, balance from accounts;
 
 ### Compare the supposed balance and reported balance. 
 
+
+
 Account 12: supposed_balance 4600, reported_balance 5000 -> fraudulent transaction
+
 Account 13: supposed_balance 2200, reported_balance 1400 -> fraudulent transaction
+
 Account 15: supposed_balance 2300, reported_balance 1500 -> fraudulent transaction
+
 Account 17: supposed_balance 2400, reported_balance 1600 -> fraudulent transaction
+
 Account 19: supposed_balance 2500, reported_balance 1700 -> fraudulent transaction
+
 
 ## 3. What is the name of the customer and the problem that resulted in the bankruptcy of the bank?
 
