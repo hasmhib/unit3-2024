@@ -32,3 +32,6 @@ for row in results:
 
 ## Proof of work
 <img width="max" alt="Screenshot 2024-02-20 at 4 17 05 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/6bda0af2-df37-4ae4-9d41-da7ed93290fd">
+
+## ER Diagram
+![image](https://github.com/hasmhib/unit3-2024/assets/142870448/26d855a6-df7d-434e-b901-b8dac6a687ae)
