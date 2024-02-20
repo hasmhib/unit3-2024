@@ -30,5 +30,7 @@ print(test2.get_duration())
 <img width="max" alt="Screenshot 2024-02-20 at 4 38 58 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/b800f4d3-8663-48ed-bf6c-329bfa082c20">
 
 ## UML Diagram
+![image](https://github.com/hasmhib/unit3-2024/assets/142870448/74254bf9-ddaa-4c67-843d-746b28660680)
+
 
 
