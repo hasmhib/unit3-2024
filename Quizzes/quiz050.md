@@ -1,4 +1,5 @@
 # Quiz 050
+<img width="max" alt="Screenshot 2024-02-20 at 7 16 08 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/52753a08-3e4d-4f8f-95f5-c25a47efa6d1">
 
 
 ## Code
@@ -19,15 +20,13 @@ class Airlines:
         output = f"{h} hours {m} minutes and {s} seconds"
         return output
 
-test1 = Airlines('ANA123', 'HND', 'NRT', "2024-02-19, 8:00AM", [1, 2, 3])
+test1 = Airlines('AA123', 'New York', 'Los Angeles', "10:00AM", [5, 6, 3])
 print(test1.get_duration())
 
-test2 = Airlines('JAL501', 'NRT', 'KIX', "2024-05-01, 5:30AM", [16, 17, 18])
-print(test2.get_duration())
 ```
 
 ## Proof of work
-<img width="max" alt="Screenshot 2024-02-20 at 4 38 58 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/b800f4d3-8663-48ed-bf6c-329bfa082c20">
+<img width="max" alt="Screenshot 2024-02-20 at 7 17 51 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/65be4d08-0c91-4468-b37f-0617cf82fb80">
 
 ## UML Diagram
 ![image](https://github.com/hasmhib/unit3-2024/assets/142870448/74254bf9-ddaa-4c67-843d-746b28660680)
