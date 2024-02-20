@@ -2,7 +2,7 @@
 
 <img width="max" alt="Screenshot 2024-02-15 at 1 16 53 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/6c943b90-e53c-4187-81c2-a778fe4f5692">
 
-## Code for quiz046.py
+## Code 
 
 ```py
 import sqlite3
@@ -330,5 +330,9 @@ MDScreen:
 
 ## Proof of work
 https://github.com/hasmhib/unit3-2024/assets/142870448/d965b478-eb28-48b3-9974-cae31e5cb8c4
+
+## ER Diagram
+![image](https://github.com/hasmhib/unit3-2024/assets/142870448/0fa81cd3-b9bd-4524-913d-1c81bb0fa8d1)
+
 
 
