@@ -30,4 +30,7 @@ for row in results:
 ## Proof of work
 <img width="max" alt="Screenshot 2024-02-20 at 4 10 04 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/6bee5662-e81e-4968-879f-8513b4299d71">
 
+## ER Diagram
+![image](https://github.com/hasmhib/unit3-2024/assets/142870448/26d855a6-df7d-434e-b901-b8dac6a687ae)
+
 
