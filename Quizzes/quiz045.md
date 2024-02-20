@@ -40,5 +40,6 @@ print("average word length is",out)
 <img width="max" alt="Screenshot 2024-02-08 at 2 41 43 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/9fe419d8-40f7-4836-8e37-775a5e490cb9">
 
 ## ER Diagram
-![image](https://github.com/hasmhib/unit3-2024/assets/142870448/7a3ed702-371a-4752-ba93-856018baf86a)
+![image](https://github.com/hasmhib/unit3-2024/assets/142870448/d0d371b2-937a-4835-826b-32d79e7c3cc8)
+
 
