@@ -10,7 +10,7 @@ Considering the client's requirements, an adequate solution will be creating a c
 
 ## Success Criteria
 
-### 1.User Access and Password Management:
+### 1. User Access and Password Management:
 The website keeps users separate with an encrypted login system and even if they forget their passwords, the users can change their passwords if they remember security questions. (Issue: _“I would like to have different users for my different workers. Furthermore, I am sure that I will eventually forget passwords and I will not be able to access this information.”_)
 
 ### 2. Financial Tracking Capability:
