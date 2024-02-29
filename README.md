@@ -23,7 +23,7 @@ The application implements a resource tracking system within the app that specif
 The application provides detailed information about order and material management by using tables and graphs such as pie charts and bar graphs. (Issue: _“There are lots of inefficiencies in order and material management and I need to calculate these every time.”_)
 
 ### 5. Translation System:
-The application provides both in Japanese and english for the domestic workers. (Issue: _“In my company there are many workers who don’t understand Japanese so I want the app to be both English and Japanese”_)
+The application provides both in Japanese and English for the international workers. (Issue: _“In my company there are many workers who don’t understand Japanese so I want the app to be both English and Japanese”_)
 
 
 
