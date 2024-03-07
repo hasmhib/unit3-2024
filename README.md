@@ -1,6 +1,6 @@
 # Unit 3: PillowTrackPro: Smart Pillow Management
 <img width="max" alt="Screenshot 2024-03-07 at 11 18 48 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/3f96cb05-999a-42ca-916e-fded01696dff">
-[^1]
+DALL·E 2024-03-07 23.18.31 - Visualize a serene image of a pillow floating above the clouds under a starry night sky.
 
 # Criteria A: Planning
 
@@ -9,7 +9,7 @@ My client is the owner of a local pillow shop, managing her business with the he
 
 
 ## Proposed Solution
-Considering the client's requirements, an adequate solution will be creating a computer program with a GUI(Graphical User Interface) that can store data in a database. Even though Xcode is one of the most popular programming languages used for macOS, I proposed to use Python. Python is a cross-platform programming language whereas Xcode is specifically designed for developing apps on Apple's platforms. As for the GUI, KivyMD is chosen for its elegance and simplicity [^2]. This GUI framework uses is structured in an object-oriented format and makes development easy compared to other GUI frameworks such as PyQT5[ref]. For the window, 
+Considering the client's requirements, an adequate solution will be creating a computer program with a GUI(Graphical User Interface) that can store data in a database. Even though Xcode is one of the most popular programming languages used for macOS, I proposed to use Python. Python is a cross-platform programming language whereas Xcode is specifically designed for developing apps on Apple's platforms. As for the GUI, KivyMD is chosen for its elegance and simplicity [^1]. This GUI framework uses is structured in an object-oriented format and makes development easy compared to other GUI frameworks such as PyQT5[ref]. For the window, 
 
 
 ## Success Criteria
@@ -28,8 +28,6 @@ The application provides detailed information about order and material managemen
 
 ### 5. Translation System:
 The application provides both in Japanese and English for the international workers. (Issue: _“In my company there are many workers who don’t understand Japanese so I want the app to be both English and Japanese”_)
-
-## Record of Task
 
 
 
@@ -59,10 +57,58 @@ Fig4. _This is the ER diagram of the PillowTrackPro_
 This is the ER Diagram for the database illustrating four tables: users, finances, customers and inventory. The "users" table has a integer primary key 'id' and attributes like 'email', 'username', and 'password'. The "finances" table has a integer primary key 'id' and attributes 'current_money'. Another table "customers" has a integer primary key 'customer_id' and attributes like 'customer_address' and 'total_price_of_order'. Last table "material" has a integer priary key 'id' and two attributes 'material_name' and 'quantity'.  
 
 
+## Flow Diagram
+
+
+## Flow Diagram
+
+
+## Flow Diagram
+
+
+## Test Plan
+
+
+## Record of Task
 
 # Criteria C: Development
 
+## Technique Used
+1. OOP paradigm
+2. KivyMD Library
+3. Relational databases
+4. SQLite, ORM
+5. functions
+6. if statements
+7. for loop
 
-[^1]:DALL·E 2024-03-07 23.18.31 - Visualize a serene image of a pillow floating above the clouds under a starry night sky.
+## Python file: "main.py"
 
-[^２]:https://stackshare.io/stackups/python-vs-xcode#:~:text=In%20summary%2C%20Python%20is%20a,complex%20syntax%20and%20limited%20compatibility. 
+### Setting up the file:
+
+```.py
+from kivy.core.window import Window
+from kivymd.app import MDApp
+from kivymd.uix.button import MDFlatButton
+from kivymd.uix.label import MDLabel
+from kivymd.uix.menu import MDDropdownMenu
+from kivymd.uix.screen import MDScreen
+from kivymd.uix.dialog import MDDialog
+from kivymd.uix.datatables import MDDataTable
+from kivy.metrics import dp
+from kivymd.uix.textfield import MDTextField
+from kivymd.uix.button import MDRaisedButton
+from kivymd.uix.boxlayout import MDBoxLayout
+from kivy.uix.image import Image
+from Project.my_library import DatabaseBridge
+import sqlite3
+import matplotlib.pyplot as plt
+import os
+```
+
+
+
+
+
+
+[^1]:https://stackshare.io/stackups/python-vs-xcode#:~:text=In%20summary%2C%20Python%20is%20a,complex%20syntax%20and%20limited%20compatibility. 
