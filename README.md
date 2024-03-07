@@ -34,7 +34,7 @@ The application provides both in Japanese and English for the international work
 # Criteria B: Design:
 
 ## System Diagram
-<img width="max" alt="Screenshot 2024-03-07 at 11 11 04 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/92fbcb9f-526e-452d-b0ef-ac2f0c6e508c">
+<img width="max" alt="Screenshot 2024-03-08 at 0 27 42 AM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/d9a3efec-87a8-4432-a03f-f8763e33dfc4">
 
 Fig1. _System Diagram of the PillowTrackPro_
 
