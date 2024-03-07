@@ -1,6 +1,8 @@
-# Unit 3: 
+# Unit 3: PillowTrackPro: Smart Pillow Management
 
-## Criteria A: Problem definition
+# Criteria A: Planning
+
+## Problem definition
 My client is the owner of a local pillow shop, managing her business with the help of three employees. She is facing significant challenges due to her usage of paper-based systems for managing client orders and tracking materials, which has led to inefficiencies and errors. This has led to difficulties in matching client orders with the materials ordered, causing inefficiencies and financial losses. For example, she recently encountered a situation where a large order for custom pillows was incorrectly recorded due to a misinterpretation of the handwriting on the order form. Consequently, the shop is losing money, and the stress of these financial losses is affecting the owner's quality of sleep, despite the fact that her business is designed to improve sleep quality.
 
 
@@ -25,6 +27,39 @@ The application provides detailed information about order and material managemen
 ### 5. Translation System:
 The application provides both in Japanese and English for the international workers. (Issue: _“In my company there are many workers who don’t understand Japanese so I want the app to be both English and Japanese”_)
 
+## Task Record
 
 
-[^1]https://stackshare.io/stackups/python-vs-xcode#:~:text=In%20summary%2C%20Python%20is%20a,complex%20syntax%20and%20limited%20compatibility. 
+
+# Criteria B: Design:
+
+## System Diagram
+<img width="1461" alt="Screenshot 2024-03-07 at 10 41 40 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/f662c398-aa50-4377-a101-e79325a716dc">
+
+Fig1. _System Diagram of the PillowTrackPro_
+This is the visual representation of the system and how they relates to one another. This displays the input: Keyboard and Trackpad/Mouse to the output: Display. This diagram also showcases versions of the programming language (Python and KivyMD), the computer version and deatail (Processor, version, memory, etc), the module and database (python file and kivy file). 
+
+
+## Wireframe Diagram
+
+Fig2. _Wireframe of the PillowTrackPro_
+
+
+## UML Diagram
+
+Fig3. _This is the UML diagram of the PillowTrackPro._
+
+
+## ER Diagram
+<img width="max" alt="Screenshot 2024-03-07 at 10 44 21 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/61841f22-6f98-43b0-8606-d1302c737dbe">
+
+Fig4. _This is the ER diagram of the PillowTrackPro_
+This is the ER Diagram for the database illustrating four tables: users, finances, customers and inventory. The "users" table has a integer primary key 'id' and attributes like 'email', 'username', and 'password'. The "finances" table has a integer primary key 'id' and attributes 'current_money'. Another table "customers" has a integer primary key 'customer_id' and attributes like 'customer_address' and 'total_price_of_order'. Last table "material" has a integer priary key 'id' and two attributes 'material_name' and 'quantity'.  
+
+
+
+# Criteria C: Development
+
+
+
+[^1]:https://stackshare.io/stackups/python-vs-xcode#:~:text=In%20summary%2C%20Python%20is%20a,complex%20syntax%20and%20limited%20compatibility. 
