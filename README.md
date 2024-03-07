@@ -1,4 +1,6 @@
 # Unit 3: PillowTrackPro: Smart Pillow Management
+![61-YYD4UXCL _AC_UF1000,1000_QL80_](https://github.com/hasmhib/unit3-2024/assets/142870448/d41b9dcb-e7c8-4af6-866e-6fa6eced59a0)
+A picture buuk "Bye-Bye Bad Dreams" by Erwin Beilhartz
 
 # Criteria A: Planning
 
@@ -34,7 +36,7 @@ The application provides both in Japanese and English for the international work
 # Criteria B: Design:
 
 ## System Diagram
-<img width="1461" alt="Screenshot 2024-03-07 at 10 41 40 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/f662c398-aa50-4377-a101-e79325a716dc">
+<img width="max" alt="Screenshot 2024-03-07 at 10 58 25 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/554b60a7-3413-43f9-9923-5ede3c4a79e3">
 
 Fig1. _System Diagram of the PillowTrackPro_
 This is the visual representation of the system and how they relates to one another. This displays the input: Keyboard and Trackpad/Mouse to the output: Display. This diagram also showcases versions of the programming language (Python and KivyMD), the computer version and deatail (Processor, version, memory, etc), the module and database (python file and kivy file). 
