@@ -37,6 +37,7 @@ The application provides both in Japanese and English for the international work
 <img width="max" alt="Screenshot 2024-03-07 at 11 11 04 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/92fbcb9f-526e-452d-b0ef-ac2f0c6e508c">
 
 Fig1. _System Diagram of the PillowTrackPro_
+
 This is the visual representation of the system and how they relates to one another. This displays the input: Keyboard and Trackpad/Mouse to the output: Display. This diagram also showcases versions of the programming language (Python and KivyMD), the computer version and deatail (Processor, version, memory, etc), the module and database (python file and kivy file). 
 
 
@@ -54,6 +55,7 @@ Fig3. _This is the UML diagram of the PillowTrackPro._
 <img width="max" alt="Screenshot 2024-03-07 at 11 11 46 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/27502c28-7062-40ea-b5cd-f7cebe419b03">
 
 Fig4. _This is the ER diagram of the PillowTrackPro_
+
 This is the ER Diagram for the database illustrating four tables: users, finances, customers and inventory. The "users" table has a integer primary key 'id' and attributes like 'email', 'username', and 'password'. The "finances" table has a integer primary key 'id' and attributes 'current_money'. Another table "customers" has a integer primary key 'customer_id' and attributes like 'customer_address' and 'total_price_of_order'. Last table "material" has a integer priary key 'id' and two attributes 'material_name' and 'quantity'.  
 
 
