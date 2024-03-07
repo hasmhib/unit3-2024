@@ -112,6 +112,5 @@ import os
 
 
 
-
-[^1]:https://stackshare.io/stackups/python-vs-xcode#:~:text=In%20summary%2C%20Python%20is%20a,complex%20syntax%20and%20limited%20compatibility
+[^1]: Python vs Xcode: What are the differences? https://stackshare.io/stackups/python-vs-xcode#:~:text=In%20summary%2C%20Python%20is%20a,complex%20syntax%20and%20limited%20compatibility 
 [^2]: https://www.activestate.com/blog/top-10-python-gui-frameworks-compared/
