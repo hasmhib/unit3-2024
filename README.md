@@ -52,7 +52,7 @@ Fig3. _This is the UML diagram of the PillowTrackPro._
 
 
 ## ER Diagram
-<img width="max" alt="Screenshot 2024-03-07 at 11 11 46 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/27502c28-7062-40ea-b5cd-f7cebe419b03">
+<img width="max" alt="Screenshot 2024-03-07 at 11 53 30 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/d5e3429d-f779-4f01-b662-ed4e232d2f99">
 
 Fig4. _This is the ER diagram of the PillowTrackPro_
 
