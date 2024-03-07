@@ -64,4 +64,5 @@ This is the ER Diagram for the database illustrating four tables: users, finance
 
 
 [^1]:DALL·E 2024-03-07 23.18.31 - Visualize a serene image of a pillow floating above the clouds under a starry night sky.
+
 [^２]:https://stackshare.io/stackups/python-vs-xcode#:~:text=In%20summary%2C%20Python%20is%20a,complex%20syntax%20and%20limited%20compatibility. 
