@@ -1,6 +1,6 @@
 # Unit 3: PillowTrackPro: Smart Pillow Management
-![61-YYD4UXCL _AC_UF1000,1000_QL80_](https://github.com/hasmhib/unit3-2024/assets/142870448/d41b9dcb-e7c8-4af6-866e-6fa6eced59a0)
-A picture buuk "Bye-Bye Bad Dreams" by Erwin Beilhartz
+<img width="max" alt="Screenshot 2024-03-07 at 11 18 48 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/3f96cb05-999a-42ca-916e-fded01696dff">
+[^1]
 
 # Criteria A: Planning
 
@@ -9,7 +9,7 @@ My client is the owner of a local pillow shop, managing her business with the he
 
 
 ## Proposed Solution
-Considering the client's requirements, an adequate solution will be creating a computer program with a GUI(Graphical User Interface) that can store data in a database. Even though Xcode is one of the most popular programming languages used for macOS, I proposed to use Python. Python is a cross-platform programming language whereas Xcode is specifically designed for developing apps on Apple's platforms. As for the GUI, KivyMD is chosen for its elegance and simplicity [^1]. This GUI framework uses is structured in an object-oriented format and makes development easy compared to other GUI frameworks such as PyQT5[ref]. For the window, 
+Considering the client's requirements, an adequate solution will be creating a computer program with a GUI(Graphical User Interface) that can store data in a database. Even though Xcode is one of the most popular programming languages used for macOS, I proposed to use Python. Python is a cross-platform programming language whereas Xcode is specifically designed for developing apps on Apple's platforms. As for the GUI, KivyMD is chosen for its elegance and simplicity [^2]. This GUI framework uses is structured in an object-oriented format and makes development easy compared to other GUI frameworks such as PyQT5[ref]. For the window, 
 
 
 ## Success Criteria
@@ -29,14 +29,14 @@ The application provides detailed information about order and material managemen
 ### 5. Translation System:
 The application provides both in Japanese and English for the international workers. (Issue: _“In my company there are many workers who don’t understand Japanese so I want the app to be both English and Japanese”_)
 
-## Task Record
+## Record of Task
 
 
 
 # Criteria B: Design:
 
 ## System Diagram
-<img width="max" alt="Screenshot 2024-03-07 at 10 58 25 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/554b60a7-3413-43f9-9923-5ede3c4a79e3">
+<img width="max" alt="Screenshot 2024-03-07 at 11 11 04 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/92fbcb9f-526e-452d-b0ef-ac2f0c6e508c">
 
 Fig1. _System Diagram of the PillowTrackPro_
 This is the visual representation of the system and how they relates to one another. This displays the input: Keyboard and Trackpad/Mouse to the output: Display. This diagram also showcases versions of the programming language (Python and KivyMD), the computer version and deatail (Processor, version, memory, etc), the module and database (python file and kivy file). 
@@ -53,7 +53,7 @@ Fig3. _This is the UML diagram of the PillowTrackPro._
 
 
 ## ER Diagram
-<img width="max" alt="Screenshot 2024-03-07 at 10 44 21 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/61841f22-6f98-43b0-8606-d1302c737dbe">
+<img width="max" alt="Screenshot 2024-03-07 at 11 11 46 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/27502c28-7062-40ea-b5cd-f7cebe419b03">
 
 Fig4. _This is the ER diagram of the PillowTrackPro_
 This is the ER Diagram for the database illustrating four tables: users, finances, customers and inventory. The "users" table has a integer primary key 'id' and attributes like 'email', 'username', and 'password'. The "finances" table has a integer primary key 'id' and attributes 'current_money'. Another table "customers" has a integer primary key 'customer_id' and attributes like 'customer_address' and 'total_price_of_order'. Last table "material" has a integer priary key 'id' and two attributes 'material_name' and 'quantity'.  
@@ -63,5 +63,5 @@ This is the ER Diagram for the database illustrating four tables: users, finance
 # Criteria C: Development
 
 
-
-[^1]:https://stackshare.io/stackups/python-vs-xcode#:~:text=In%20summary%2C%20Python%20is%20a,complex%20syntax%20and%20limited%20compatibility. 
+[^1]:DALL·E 2024-03-07 23.18.31 - Visualize a serene image of a pillow floating above the clouds under a starry night sky.
+[^２]:https://stackshare.io/stackups/python-vs-xcode#:~:text=In%20summary%2C%20Python%20is%20a,complex%20syntax%20and%20limited%20compatibility. 
