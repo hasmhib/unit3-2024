@@ -36,25 +36,30 @@ The application allows the user to search for orders by materials. (Issue: _“I
 ## System Diagram
 <img width="max" alt="Screenshot 2024-03-08 at 0 27 42 AM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/d9a3efec-87a8-4432-a03f-f8763e33dfc4">
 
-Fig1. _System Diagram of the PillowTrackPro_
+Fig. 1: _System Diagram of the PillowTrackPro_
 
 This is the visual representation of the system and how they relates to one another. This displays the input: Keyboard and Trackpad/Mouse to the output: Display. This diagram also showcases versions of the programming language (Python and KivyMD), the computer version and deatail (Processor, version, memory, etc), the module and database (python file and kivy file). 
 
 
 ## Wireframe Diagram
+<img width="max" alt="image" src="https://github.com/hasmhib/unit3-2024/assets/142870448/073baca2-2040-4818-9ca4-32dc8bb85dd1">
 
-Fig2. _Wireframe of the PillowTrackPro_
+Fig. 2: _Wireframe of the PillowTrackPro_
+
+The wireframe diagram in Fig. 2 illustrates the proposed GUI interface and navigation flow of the application. It showcases the interconnectivity between different screens, with directional arrows directs from interactive buttons to indicate the users through the app. For example, the 'Login' screen allows users to either create an account by pressing 'Signin' button or or utilize the 'Forgot Password?' option, which leads to a secure process for resetting their password. 
+
+Once logged in, the 'Welcome' screen serves as a central hub, directing users to various sections of the application: 'Finances', 'Customers', 'Order', and 'Inventory'. These sections are designed for specific tasks within the app. For instance, the 'Finances Screen' will present options for visualizing financial data through pie charts and bar graphs, while the 'Order Screen' facilitates order placement and tracking. Additionally, the 'CustomerScreen' is used for managing customer information and orders, and the 'InventoryScreen' provides an overview and control of material stock levels.
 
 
 ## UML Diagram
 
-Fig3. _This is the UML diagram of the PillowTrackPro._
+Fig. 3: _This is the UML diagram of the PillowTrackPro._
 
 
 ## ER Diagram
 <img width="max" alt="Screenshot 2024-03-07 at 11 53 30 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/d5e3429d-f779-4f01-b662-ed4e232d2f99">
 
-Fig4. _This is the ER diagram of the PillowTrackPro_
+Fig. 4: _This is the ER diagram of the PillowTrackPro_
 
 This is the ER Diagram for the database illustrating four tables: users, finances, customers and inventory. The "users" table has a integer primary key 'id' and attributes like 'email', 'username', and 'password'. The "finances" table has a integer primary key 'id' and attributes 'current_money'. Another table "customers" has a integer primary key 'customer_id' and attributes like 'customer_address' and 'total_price_of_order'. Last table "material" has a integer priary key 'id' and two attributes 'material_name' and 'quantity'.  
 
