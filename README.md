@@ -46,7 +46,7 @@ This is the visual representation of the system and how they relates to one anot
 
 Fig. 2: _Wireframe of the PillowTrackPro_
 
-The wireframe diagram in Fig. 2 illustrates the proposed GUI interface and navigation flow of the application. It showcases the interconnectivity between different screens, with directional arrows directs from interactive buttons to indicate the users through the app. For example, the 'Login' screen allows users to either create an account by pressing 'Signin' button or or utilize the 'Forgot Password?' option, which leads to a secure process for resetting their password. 
+The wireframe diagram in Fig. 2 illustrates the proposed GUI interface and navigation flow of the application. It showcases the interconnectivity between different screens, with directional arrows directs from interactive buttons to indicate the users through the app. For example, the 'Login' screen allows users to either create an account by pressing 'Signin' button or or utilize the 'Forgot Password?' option, which leads the users to resetting their password. 
 
 Once logged in, the 'Welcome' screen serves as a central hub, directing users to various sections of the application: 'Finances', 'Customers', 'Order', and 'Inventory'. These sections are designed for specific tasks within the app. For instance, the 'Finances Screen' will present options for visualizing financial data through pie charts and bar graphs, while the 'Order Screen' facilitates order placement and tracking. Additionally, the 'CustomerScreen' is used for managing customer information and orders, and the 'InventoryScreen' provides an overview and control of material stock levels.
 
