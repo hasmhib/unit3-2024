@@ -53,7 +53,7 @@ Once logged in, the 'Welcome' screen serves as a central hub, directing users to
 
 
 ## UML Diagram
-<img width="max" alt="Screenshot 2024-03-10 at 7 17 09 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/5bdbfe76-a80d-44f0-8cc9-ae04045c8aaa">
+<img width="max" alt="Screenshot 2024-03-10 at 7 23 10 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/63268e5f-1136-4805-beb7-7d87685ac47b">
 
 Fig. 3: _This is the UML diagram of the PillowTrackPro._
 
