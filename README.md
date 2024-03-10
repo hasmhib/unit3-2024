@@ -18,13 +18,13 @@ Considering the client's requirements, an adequate solution will be creating a c
 The website keeps users separate with an encrypted login system and even if they forget their passwords, the users can change their passwords if they remember security questions. (Issue: _“I would like to have different users for my different workers. Furthermore, I am sure that I will eventually forget passwords and I will not be able to access this information.”_)
 
 ### 2. Financial Tracking Capability:
-The application includes a financial tracking feature that accurately records and monitors the company's transactions such as expenses an income. (Issue: _“I suffer with an financial losses due to incorrectly recorded orders”_)
+he application includes a financial tracking feature that accurately records and monitors the company's transactions such as expenses an income and visualize this by using pie charts. (Issue: _“I suffer with an financial losses due to incorrectly recorded orders”_)
 
 ### 3. Resource Management for Production:
 The application implements a resource management system within the app that specifically visualize the materials that are available for making pillows. (Issue: _"I was not able to track the materials, and there are many times when resources were over-booked, and I had to buy materials again, losing profits."_) 
 
 ### 4. Comprehensive Order and Material Management:
-The application provides detailed information about order and material management by using tables and graphs such as pie charts and bar graphs. (Issue: _“There are lots of inefficiencies in order and material management and I need to calculate these every time.”_)
+The application provides detailed information about order and material management by using tables and graphs such as bar graphs. (Issue: _“There are lots of inefficiencies in order and material management and I need to calculate these every time.”_)
 
 ### 5. Order searching System:
 The application allows the user to search for orders by materials. (Issue: _“I was not able to check who ordered what materials, it is difficult to check customer informations all the time.”_)
@@ -156,6 +156,78 @@ This is the flow diagram for the code that lets you switch between hiding and sh
 
 ## Development
 
+### Screen Manager
+```.py
+ScreenManager:
+
+    id: main_scr
+    MainScreen:
+        name: "MainScreen"
+    SecondScreen:
+        name: "SecondScreen"
+    ForgotPasswordScreen:
+        name: "ForgotPasswordScreen"
+    ResetPasswordScreen:
+        name: "ResetPasswordScreen"
+    MenuScreen:
+        name: "MenuScreen"
+    FinancesScreen:
+        name: "FinancesScreen"
+    CustomersScreen:
+        name: "CustomersScreen"
+    OrderScreen:
+        name: "OrderScreen"
+    InventoryScreen:
+        name: "InventoryScreen"
+```
+The Screen Manger on kivy file provides a efficient way to organize and directs between different screens in an application.
+
+
+### toggle password function _(class MainScreen, SecondScreen and ResetPasswordScreen)_
+
+```.py
+def toggle_password_visibility(self):
+    # Toggle the visibility state
+    self.password_visible = not self.password_visible
+
+    # Find the password and confirm password fields by their ids
+    password_field = self.ids.upass
+    confirm_password_field = self.ids.cpass
+
+# Code continued
+```
+This function, 'toggle_password_visibility', changes whether passwords are visible or hidden in the user interface. It flips the state of self.password_visible to its opposite value. Depending on the new visibility state, it either shows or hides the password. When passwords are set to be visible, the function changes an icon to an "eye" symbol to show that the passwords can be seen. On the other hand, when it hides the passwords, it changes the icon to "eye-off," signaling that the passwords are now not visible.
+
+
+https://github.com/hasmhib/unit3-2024/assets/142870448/f628b1e6-27a1-488c-bc37-80fac4411fff
+
+Fig. 8: _Demonstrating the 'toggle_password_visibility' function_
+
+
+### Show dialog _(class LoginScreen and ForgotPasswordScreen)_
+
+```.py
+    def show_verification_failed_dialog(self):
+        if not hasattr(self, 'verification_failed_dialog'):
+            self.verification_failed_dialog = MDDialog(
+                title="Verification Failed",
+                text="Your email and security question answer do not match our records.",
+                buttons=[
+                    MDFlatButton(
+                        text="OK",
+                        theme_text_color="Custom",
+                        on_release=lambda x: self.verification_failed_dialog.dismiss()
+                    )
+                ],
+            )
+        self.verification_failed_dialog.open()
+```
+This code is on eexample of implementation of pop-up dialog. This function, 'show_verification_failed_dialog', displays a dialog box when a user's verification attempt fails, specifically when their email and security question answer do not match the application's records.
+
+
+<img width="max" alt="Screenshot 2024-03-11 at 1 54 14 AM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/b64a36ef-47fa-442e-873d-7b6369393b08">
+
+Fig. 9: _An example of Dialog_
 
 ## Success Criteria 1: The website keeps users separate with an encrypted login system and even if they forget their passwords, the users can change their passwords if they remember security questions.
 
@@ -248,17 +320,80 @@ def update_password(self):
     # code continues
 ```
 
-This code updates a user's password. It first checks if the new password and its confirmation match. If they do, it hashes the new password and updates it in the 'users' database for the user with the corresponding email. If the update is successful, it shows a success pop-up message; if not, it displays an pop-up message showing an error.
+This code updates a user's password. It first checks if the new password and its confirmation match and if they do, it hashes the new password and updates it in the 'users' database for the user with the corresponding email. If then update is successful, it shows a success pop-up message; if not, it displays an pop-up message showing an error.
 
 
-## Success Criteria 2: The application includes a financial tracking feature that accurately records and monitors the company's transactions such as expenses an income.
+## Success Criteria 2: The application includes a financial tracking feature that accurately records and monitors the company's transactions such as expenses an income and visualize this by using pie charts.
+
+I achieved the financial tracking feature by creating pie charts in the "FinancesScreen" with the 'show_pie_chart' function, and accurately recording transactions through the 'submit_order' function in the "OrderScreen". This functions allows for both monitoring of expenses and income, and their visualization.
 
 
+### 'show_pie_chart' functions _(class FinanceScreen)_
+
+```.py
+def show_pie_chart(self):
+    pie_charts_directory = os.path.join(os.getcwd(), 'temp')
+    if not os.path.exists(pie_charts_directory):
+        os.makedirs(pie_charts_directory)
+
+    pie_chart_path = os.path.join(pie_charts_directory, 'finance_pie_chart.png')
+
+    finance_data = self.get_finance_data()
+    fig, ax = plt.subplots()
+    ax.pie(finance_data['amounts'], labels=finance_data['categories'], autopct='%1.1f%%')
+    plt.title('Finance Distribution')
+    plt.savefig(pie_chart_path)
+    plt.close(fig)
+
+    self.ids.chart_container.clear_widgets()
+    self.ids.chart_container.add_widget(Image(source=pie_chart_path))
+```
+
+This code generates a pie chart to visualize financial data and displays it within the user interface. It first checks if a directory for storing pie charts exists, creating one if not exists. Then, it prepares a file for the new pie chart. Using financial data gets back by 'get_finance_data', it creates the pie chart with percentages, create titles "Finance Distribution", and saves the chart to the plt.savefig path to adjust to the app. Finally, it clears any existing pie charts in the chart container and adds the newly created pie chart image for display.
+
+<img width="max" alt="Screenshot 2024-03-11 at 0 39 02 AM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/1ee24916-4856-43d3-9a36-1acac4fd81b3">
+
+Fig. 10: _An example of pie charts shown in "FinanceScreen" This example is 'Rent': 15000, 'Salaries': 30000, 'Utilities': 5000, 'Marketing': 10000_ 
+
+
+### 'submit_order' function _(class OrderScreen)_
+
+```.py
+def submit_order(self):
+# Address the terms
+
+    MATERIAL_PRICES = {
+        "Buckwheat hulls": 3000,
+        "Low rebound urethane": 2500,
+        "High resilience urethane": 3500,
+        "Pipe": 3000,
+        "Down": 5000,
+        "Feather": 7000,
+        "Polyester wadding": 6000,
+        "Fiber": 6500
+    }
+
+    if not all([customer_name, customer_address, customer_phone_number, pillow_material, pillow_size, total_price]):
+        print("Please fill in all fields.")
+        return
+
+    material_cost = MATERIAL_PRICES.get(pillow_material, 0)
+
+    inventory_query = "SELECT id, quantity FROM inventory WHERE material_name = ?"
+    inventory_item = main.db.search(inventory_query, (pillow_material,))
+
+    required_quantity = 1
+
+    if inventory_item and inventory_item[1] >= required_quantity:
+    # Code continues
+```
+
+The 'submit_order function' processes customer orders by receiving inputs from users about informations such as customer name, address, phone number, pillow material, size, and the total price. The function checks make sure every informations are filled and verifies whether requested material is available by checking quantity 'inventory' table. After validation, it inserts the order details into the 'customer' table, updates the inventory to reflect the used materials, and adjusts the financial records to include the sale's revenue while substracting material costs. 
 
 
 ## Success Criteria 3: The application implements a resource management system within the app that specifically visualize the materials that are available for making pillows.
 
-I fulfilled this success criteria by implementing three key functions: 'get_inventory_items' to fetch current material stock from the 'project3.db' database 'inventory' table, 'generate_inventory_ui' to create a user interface that displays these materials and their quantities, and 'update_inventory' to adjust stock levels of materials based on user interactions.
+I fulfilled this success criteria by implementing three key functions: 'get_inventory_items' to fetch current material stock from the 'project3.db' database 'inventory' table, 'generate_inventory_ui' to create a user interface that displays these materials and their quantities, and 'update_inventory' to adjust quantity levels of materials based on user interactions.
 
 ### 'get_inventory_items' functions _(class InventoryScreen)_
 
@@ -275,7 +410,8 @@ def get_inventory_items(self):
         })
     return inventory_items
 ```
-This code retrieves the list of materials from the 'inventory' table. It runs a query to select the ID, name, and quantity of each material. For each item found, it adds a dictionary with these informations to a list, then returns. This process gathers current stock information and ready to be displayed or managed within the application.
+This code retrieves the list of materials from the 'inventory' table. It then runs a query to select the ID, name, and quantity of each material. For each item found, it adds a dictionary with these informations to a list, then returns. This process gathers current quantity stock information and ready to be displayed or managed within the application.
+
 
 ### 'generate_inventory_ui' functions _(class InventoryScreen)_
 
@@ -304,40 +440,12 @@ def update_inventory(self, material_id, change):
     # Code continues
 ```
 
-This code updates the quantity of a specific material in the inventory database. It first finds the current quantity of the material by fetching its ID, then calculates the new quantity by adding the change (which can be positive or negative) and it ensures the quantity never goes below 0. Then, it updates the database with the new quantity for the material. Finally, it refreshes the inventory items and the user interface to show the updated values.
+This code updates the quantity of a specific material in the inventory database. It first finds the current quantity of the material by fetching its ID, then calculates the new quantity by adding the change (which can be positive change or negative change) and it ensures the quantity never goes below 0. Then, it updates the database with the new quantity for the material. Finally, it refreshes the inventory items and the user interface to show the updated values.
 
 
-## Success Criteria 4: The application provides detailed information about order and material management by using tables and graphs such as pie charts and bar graphs.
+## Success Criteria 4: The application provides detailed information about order and material management by using tables and graphs such as bar graphs.
 
-I fulfilled this criteria by implementing the 'show_pie_chart' and 'show_bar_graph' functions in the "FinancesScreen" class for showcasing financial distributions and customer preferences based on data. Furthermore, I utilized the 'update_table' function in the "OrderScreen" class to manage and display detailed information about orders, including materials used.
-
-
-### 'show_pie_chart' functions _(class FinanceScreen)_
-
-```.py
-def show_pie_chart(self):
-    pie_charts_directory = os.path.join(os.getcwd(), 'temp')
-    if not os.path.exists(pie_charts_directory):
-        os.makedirs(pie_charts_directory)
-
-    pie_chart_path = os.path.join(pie_charts_directory, 'finance_pie_chart.png')
-
-    finance_data = self.get_finance_data()
-    fig, ax = plt.subplots()
-    ax.pie(finance_data['amounts'], labels=finance_data['categories'], autopct='%1.1f%%')
-    plt.title('Finance Distribution')
-    plt.savefig(pie_chart_path)
-    plt.close(fig)
-
-    self.ids.chart_container.clear_widgets()
-    self.ids.chart_container.add_widget(Image(source=pie_chart_path))
-```
-
-This code generates a pie chart to visualize financial data and displays it within the user interface. It first checks if a directory for storing pie charts exists, creating one if necessary. Then, it prepares a file path for the new pie chart. Using financial data gets back by 'get_finance_data', it creates the pie chart with percentages, create titles "Finance Distribution", and saves the chart to the plt.savefig path to adjust to the app. Finally, it clears any existing pie charts in the chart container and adds the newly created pie chart image for display.
-
-<img width="max" alt="Screenshot 2024-03-11 at 0 39 02 AM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/1ee24916-4856-43d3-9a36-1acac4fd81b3">
-
-Fig. 8: _An example of pie charts shown in "FinanceScreen"_
+I fulfilled this criteria by implementing the 'show_bar_graph' functions in the "FinancesScreen" class for showcasing customer preferences based on the data stored in 'customers' table. Furthermore, I utilized the 'update_table' function in the "OrderScreen" class to manage and display detailed information about orders, including materials used.
 
 
 ### 'show_bar_graph' functions _(class FinanceScreen)_
@@ -382,11 +490,11 @@ def show_bar_graph(self):
     # Plotting the bar graph    
     # Code continues
 ```
-This code creates a bar graph showing the distribution of pillow materials based on customer preferences and displays it in the application. It first ensures a directory for storing bar graphs exists, then generates a path for the new graph. It sets initial counts of various pillow materials to zero and queries the 'customers' table to update these counts based on actual customer data that are stored in the database. Using this data, it plots a bar graph with materials on the x-axis and customer counts on the y-axis, saves the graph to the 'bar_graph' path, and then updates the application's UI to display the new graph by clearing previous images in the chart container and adding the new bar graph image.
+This code creates a bar graph showing the distribution of pillow materials based on customer preferences and displays it within the application. It first ensures a directory for storing bar graphs exists, then generates a path for the new graph. It sets initial counts of various pillow materials to zero and queries the 'customers' table to add these counts based on actual customer data that are stored in the 'customers' database. Using this data, it plots a bar graph with materials on the x-axis and quantity on the y-axis, saves the graph to the 'bar_graph' path, and then updates the application's UI to display the new graph by clearing previous images in the chart container and adding the new bar graph image.
 
 <img width="max" alt="Screenshot 2024-03-11 at 0 48 04 AM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/8194d969-4fc8-4898-aae5-a50a61cca65b">
 
-Fig. 9: _An example of bar graphs shown in "FinanceScreen"_
+Fig. 11: _An example of bar graphs shown in "FinanceScreen"_
 
 
 ### 'update_table' functions _(class CustomerScreen)_
@@ -402,7 +510,7 @@ This code updates a table in the application with customer order details by fetc
 
 ## Success Criteria 5: The application allows the user to search for orders by materials. 
 
-I fulfilled this criteria by implementing the "OrderScreen" class and inside 'search_by_material' function. This function enables users to specify a material and outputs all orders that used that particular material in pop-up dialog, showcasing the application's capability to filter and display order information based on material criteria.
+I fulfilled this criteria by implementing the "OrderScreen" class and function 'search_by_material'. This function enables users to specify a material and outputs all orders that used that particular material in pop-up dialog, showcasing the application's capability to filter and display order information based on material criteria.
 
 
 ### 'search_by_material' function _(class OrderScreen)_
@@ -423,18 +531,17 @@ def search_by_material(self):
     # Code continues
 ```
 
-This function retrieves the selected material from the user interface, choose the materials, and then queries the 'customers' table for orders that match the specified material. Based on the query results, it either displays the matching orders or let the user know that no orders were found for the selected material, effectively allowing users to filter orders by material type.
+This function retrieves the selected material from the user interface, choose the materials, and then queries the 'customers' table for orders that match the requested material. Based on the query results, it either displays the matching orders to the pop-up screen or let the user know that no orders were found for the selected material, effectively allowing users to filter orders by material type.
 
 <img width="max" alt="Screenshot 2024-03-11 at 1 13 18 AM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/bfe33163-b4d2-47a8-93d8-d152e6e1c12e">
 
-Fig. 10: _An example of 'search_by_material' shown in "OrderScreen"_
+Fig. 12: _An example of 'search_by_material' shown in "OrderScreen"_
 
 
 # Criteria D: Functionlaity
 
 ## Demonstration video
 https://drive.google.com/file/d/1tz2VrezD6CRP31pPIW8PfwshkYrk4gmb/view?usp=drive_link 
-
 
 
 [^1]: Python vs Xcode: What are the differences? https://stackshare.io/stackups/python-vs-xcode#:~:text=In%20summary%2C%20Python%20is%20a,complex%20syntax%20and%20limited%20compatibility 
