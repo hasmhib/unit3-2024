@@ -185,6 +185,20 @@ ScreenManager:
 ```
 The Screen Manger on kivy file provides a efficient way to organize and directs between different screens in an application.
 
+### MDFloatingActionButton
+
+```.py
+MDFloatingActionButton:
+    icon: "logout"
+    on_release: root.show_logout_confirmation()
+    size_hint: None, None
+    size: dp(56), dp(56)
+    elevation_normal: 8
+    md_bg_color: "red"
+```
+
+This code creates a red floating action button with a logout icon that when pressed, calls a method to show a logout confirmation dialogue.
+
 
 ### toggle password function _(class MainScreen, SecondScreen and ResetPasswordScreen)_
 
@@ -199,6 +213,17 @@ def toggle_password_visibility(self):
 
 # Code continued
 ```
+
+### MDIconButton
+
+```.py
+MDIconButton:
+    id: password_toggle_icon
+    icon: "eye-off"
+    pos_hint: {"center_x": .9, "center_y": .5}
+    on_release: root.toggle_password_visibility()
+```
+
 This function, 'toggle_password_visibility', changes whether passwords are visible or hidden in the user interface. It flips the state of self.password_visible to its opposite value. Depending on the new visibility state, it either shows or hides the password. When passwords are set to be visible, the function changes an icon to an "eye" symbol to show that the passwords can be seen. On the other hand, when it hides the passwords, it changes the icon to "eye-off," signaling that the passwords are now not visible.
 
 
