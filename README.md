@@ -21,7 +21,7 @@ The website keeps users separate with an encrypted login system and even if they
 The application includes a financial tracking feature that accurately records and monitors the company's transactions such as expenses an income. (Issue: _“I suffer with an financial losses due to incorrectly recorded orders”_)
 
 ### 3. Resource Management for Production:
-The application implements a resource management system within the app that specifically track the materials used for making pillows. (Issue: _"I was not able to track the materials, and there are many times when resources were over-booked, and I had to buy materials again, losing profits."_) 
+The application implements a resource management system within the app that specifically visualize the materials that are available for making pillows. (Issue: _"I was not able to track the materials, and there are many times when resources were over-booked, and I had to buy materials again, losing profits."_) 
 
 ### 4. Comprehensive Order and Material Management:
 The application provides detailed information about order and material management by using tables and graphs such as pie charts and bar graphs. (Issue: _“There are lots of inefficiencies in order and material management and I need to calculate these every time.”_)
