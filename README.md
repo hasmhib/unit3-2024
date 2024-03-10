@@ -259,7 +259,7 @@ Fig. 9: _An example of Dialog_
 
 ## Success Criteria 1: The website keeps users separate with an encrypted login system and even if they forget their passwords, the users can change their passwords if they remember security questions.
 
-I supports the criteria by incorporating an encrypted login system that hashes passwords, offers a method for password recovery using security questions, and allows updates of user passwords. The 'verify_login' functions allows users to login the application. The 'get_hash' and 'check_hash' functions indicate the use of encryption for password management, while the 'verify_and_reset_password' and 'update_password' methods provide the way for password recovery and resetting.
+I fulfilled the success criteria by using an encrypted login system that hashes passwords, offers a method for password recovery using security questions, and allows updates of user passwords. The 'verify_login' functions allows users to login the application. The 'get_hash' and 'check_hash' functions used for encryption for password management, while the 'verify_and_reset_password' and 'update_password' methods provide the way for password recovery and resetting.
 
 ### 'get_hash' function _(class DatabaseBridge)_
 
