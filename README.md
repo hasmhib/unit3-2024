@@ -76,6 +76,13 @@ This is the flow diagram for the code that is designed to show a bar graph of cu
 
 
 ## Flow Diagram
+<img width="max" alt="Screenshot 2024-03-10 at 3 18 01 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/4c136bde-8305-49dd-b244-7c6a28e582e2">
+
+
+Fig. 7 _This is the flow diagram of the 'toggle_password_visibility'_
+
+This is the flow diagram for the code that lets you switch between hiding and showing your password by clicking on an icon, and it changes the icon to match the password's visibility state.
+
 
 
 ## Test Plan
