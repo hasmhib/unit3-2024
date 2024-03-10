@@ -161,7 +161,7 @@ This is the flow diagram for the code that lets you switch between hiding and sh
 
 I supports the criteria by incorporating an encrypted login system that hashes passwords, offers a method for password recovery using security questions, and allows updates of user passwords. The 'verify_login' functions allows users to login the application. The 'get_hash' and 'check_hash' functions indicate the use of encryption for password management, while the 'verify_and_reset_password' and 'update_password' methods provide the way for password recovery and resetting.
 
-### 'get_hash' function
+### 'get_hash' function _(class DatabaseBridge)_
 
 ```.py
 hasher = sha256_crypt.using(rounds = 30000)
@@ -172,7 +172,7 @@ def get_hash(text:str):
 This code creates a function get_hash that uses SHA-256 algorithm to turn a given input (text) into a secure, hashed string, doing so through 30,000 rounds of processing.
 
 
-### 'check_hash' function
+### 'check_hash' function _(class DatabaseBridge)_
 
 ```.py
 hasher = sha256_crypt.using(rounds = 30000)
@@ -183,7 +183,7 @@ def check_hash(input_hash, text):
 This code defines a function 'check_hash' that checks if a given input (text) matches a provided hashed string using the SHA-256 algorithm with 30,000 rounds of hashing.
 
 
-### 'verify_login' function
+### 'verify_login' function _(class MainScreen)_
 
 ```.py
 def verify_login(self):
@@ -203,6 +203,8 @@ def verify_login(self):
 
 The verify_login method allow users to login to the application by validating their username (or email) and password against stored informations in the 'project3.db' database 'users' table. Firstly, this code connects to the database and fetches user inputs. It then checks the database whether a user with the provided username or email exists. If found, it checks whether the entered password matches the stored hashed password using a 'check_hash' method. If the match is successful, it clears the input fields, and navigates to the "MenuScreen." On the other hand, if the password does not match or no user is found, it displays a pop-up dialog letting users that the login attempt was unsuccessful.
 
+
+###  'verify_and_reset_password' _(class ForgotPasswordScreen)_
 
 ```.py
 def verify_and_reset_password(self):
@@ -224,7 +226,7 @@ def verify_and_reset_password(self):
 This code allows a user to reset their password by verifying their email and the answer to a security question (their favorite teacher during elementary school). If the information matches a record in the database, it directs the user to a "ResetPasswordScreen" where they can set a new password. If the verification fails, it shows an error pop-up dialog saying that your email and security question does not match.
 
 
-### 'update_password' function
+### 'update_password' function _(class ResetPasswordScreen)_
 
 ```.py
 def update_password(self):
@@ -258,7 +260,7 @@ This code updates a user's password. It first checks if the new password and its
 
 I fulfilled this success criteria by implementing three key functions: 'get_inventory_items' to fetch current material stock from the 'project3.db' database 'inventory' table, 'generate_inventory_ui' to create a user interface that displays these materials and their quantities, and 'update_inventory' to adjust stock levels of materials based on user interactions.
 
-### 'get_inventory_items' functions
+### 'get_inventory_items' functions _(class InventoryScreen)_
 
 ```.py
 def get_inventory_items(self):
@@ -275,7 +277,7 @@ def get_inventory_items(self):
 ```
 This code retrieves the list of materials from the 'inventory' table. It runs a query to select the ID, name, and quantity of each material. For each item found, it adds a dictionary with these informations to a list, then returns. This process gathers current stock information and ready to be displayed or managed within the application.
 
-### 'generate_inventory_ui' functions
+### 'generate_inventory_ui' functions _(class InventoryScreen)_
 
 ```.py
 def generate_inventory_ui(self):
@@ -290,7 +292,7 @@ def generate_inventory_ui(self):
 This code creates the UI (user interface) for the 'InventoryScreen', showing each material's name and quantity that are stored in 'inventory' table. For each item, it sets up a horizontal layout with a label for the material name, a text field showing the quantity, and buttons to increase or decrease the quantity. When these buttons are clicked, they updates the inventory, adjusting the stock levels accordingly.
 
 
-### 'update_inventory' functions
+### 'update_inventory' functions _(class InventoryScreen)_
 
 ```.py
 def update_inventory(self, material_id, change):
@@ -307,6 +309,92 @@ This code updates the quantity of a specific material in the inventory database.
 
 ## Success Criteria 4: The application provides detailed information about order and material management by using tables and graphs such as pie charts and bar graphs.
 
+I fulfilled this criteria by implementing the 'show_pie_chart' and 'show_bar_graph' functions in the "FinancesScreen" class for showcasing financial distributions and customer preferences based on data. Furthermore, I utilized the 'update_table' function in the "OrderScreen" class to manage and display detailed information about orders, including materials used.
+
+
+### 'show_pie_chart' functions _(class FinanceScreen)_
+
+```.py
+def show_pie_chart(self):
+    pie_charts_directory = os.path.join(os.getcwd(), 'temp')
+    if not os.path.exists(pie_charts_directory):
+        os.makedirs(pie_charts_directory)
+
+    pie_chart_path = os.path.join(pie_charts_directory, 'finance_pie_chart.png')
+
+    finance_data = self.get_finance_data()
+    fig, ax = plt.subplots()
+    ax.pie(finance_data['amounts'], labels=finance_data['categories'], autopct='%1.1f%%')
+    plt.title('Finance Distribution')
+    plt.savefig(pie_chart_path)
+    plt.close(fig)
+
+    self.ids.chart_container.clear_widgets()
+    self.ids.chart_container.add_widget(Image(source=pie_chart_path))
+```
+
+This code generates a pie chart to visualize financial data and displays it within the user interface. It first checks if a directory for storing pie charts exists, creating one if necessary. Then, it prepares a file path for the new pie chart. Using financial data gets back by 'get_finance_data', it creates the pie chart with percentages, create titles "Finance Distribution", and saves the chart to the plt.savefig path to adjust to the app. Finally, it clears any existing pie charts in the chart container and adds the newly created pie chart image for display.
+
+<img width="max" alt="Screenshot 2024-03-11 at 0 39 02 AM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/1ee24916-4856-43d3-9a36-1acac4fd81b3">
+Fig. 8: _An example of pie charts shown in "FinanceScreen"_
+
+
+### 'show_bar_graph' functions _(class FinanceScreen)_
+
+```.py
+def show_bar_graph(self):
+    bar_graph_directory = os.path.join(os.getcwd(), 'bar_graph')
+    if not os.path.exists(bar_graph_directory):
+        os.makedirs(bar_graph_directory)
+
+    bar_graph_path = os.path.join(bar_graph_directory, 'customer_pillow_material_graph.png')
+
+    default_materials = {
+        "Buckwheat hulls": 0,
+        "Low rebound urethane": 0,
+        "High resilience urethane": 0,
+        "Pipe": 0,
+        "Down": 0,
+        "Feather": 0,
+        "Polyester wadding": 0,
+        "Fiber": 0
+    }
+
+    # Query to count each pillow material type
+    pillow_material_query = """
+    SELECT customer_pillow_material, COUNT(*) as material_count 
+    FROM customers 
+    GROUP BY customer_pillow_material
+    """
+
+    pillow_material_data = self.execute_query(pillow_material_query)
+
+    if pillow_material_data:
+        # Update counts for materials found in the query
+        for material, count in pillow_material_data:
+            if material in default_materials:  # Ensure that only expected materials are counted
+                default_materials[material] += count
+
+    materials = list(default_materials.keys())
+    counts = list(default_materials.values())
+
+    # Plotting the bar graph    
+    # Code continues
+```
+This code creates a bar graph showing the distribution of pillow materials based on customer preferences and displays it in the application. It first ensures a directory for storing bar graphs exists, then generates a path for the new graph. It sets initial counts of various pillow materials to zero and queries the 'customers' table to update these counts based on actual customer data that are stored in the database. Using this data, it plots a bar graph with materials on the x-axis and customer counts on the y-axis, saves the graph to the 'bar_graph' path, and then updates the application's UI to display the new graph by clearing previous images in the chart container and adding the new bar graph image.
+
+<img width="max" alt="Screenshot 2024-03-11 at 0 48 04 AM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/8194d969-4fc8-4898-aae5-a50a61cca65b">
+Fig. 9: _An example of bar graphs shown in "FinanceScreen"_
+
+
+### 'update_table' functions _(class CustomerScreen)_
+
+```.py
+def update_table(self):
+    data = main.db.search(query="SELECT customer_id, customer_name, customer_address, customer_phone_number, customer_pillow_material, customer_pillow_size, total_price_of_ordered_pillow FROM customers", multiple=True)
+    self.data_table.row_data = data
+```
+This code updates a table in the application with customer order details by fetching data from the database and setting it as the new row data for the table.
 
 
 
