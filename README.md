@@ -420,16 +420,7 @@ def search_by_material(self):
         (material,))
 
     # Ensure results is a list (even for no or single result)
-    if results is None or isinstance(results, int):
-        # This line adjusts for unexpected 'None' or 'int' return types
-        results = []
-    elif isinstance(results, tuple):
-        results = [results]  # Convert single tuple result to a list of tuples
-
-    if results:
-        self.show_search_results(results)
-    else:
-        self.show_popup("Search Results", "No orders found for the selected material.")
+    # Code continues
 ```
 
 This function retrieves the selected material from the user interface, choose the materials, and then queries the 'customers' table for orders that match the specified material. Based on the query results, it either displays the matching orders or let the user know that no orders were found for the selected material, effectively allowing users to filter orders by material type.
