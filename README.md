@@ -65,7 +65,7 @@ This is the ER Diagram for the database illustrating four tables: users, finance
 
 
 ## Flow Diagram
-<img width="max" alt="Screenshot 2024-03-10 at 2 26 21 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/7bb4e788-7bce-4bcd-94d5-17082a288e3d">
+<img width="max" alt="Screenshot 2024-03-10 at 2 36 46 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/2068eae7-1491-4c56-99fc-acfc756cdbbc">
 
 Fig. 5 _This is the flow diagram of the 'show_bar_graph'_
 
