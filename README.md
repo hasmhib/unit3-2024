@@ -65,6 +65,11 @@ This is the ER Diagram for the database illustrating four tables: users, finance
 
 
 ## Flow Diagram
+<img width="max" alt="Screenshot 2024-03-10 at 2 26 21 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/7bb4e788-7bce-4bcd-94d5-17082a288e3d">
+
+Fig. 5 _This is the flow diagram of the 'show_bar_graph'_
+
+This is the flow diagram for the code that is designed to show a bar graph of customer pillow material distribution. This code collects data on what pillow materials customers prefer, creates a visual bar graph to show these preferences, saves the graph as an image, and then displays it.
 
 
 ## Flow Diagram
