@@ -201,7 +201,8 @@ def verify_login(self):
     # code continues
 ```
 
-The verify_login method allow users to login to the application by validating their username (or email) and password against stored informations in the 'project3.db' database 'users' table. Firstly, this code connects to the database and fetches user inputs. It then checks the database whether a user with the provided username or email exists. If found, it checks whether the entered password matches the stored hashed password using a 'check_hash' method. If the match is successful, it clears the input fields, and navigates to the "MenuScreen." On the other hand, if the password does not match or no user is found, it displays a pop-up dialog letting users that the login attempt was unsuccessful. This process ensures secure and user-friendly login functionality within the application.
+The verify_login method allow users to login to the application by validating their username (or email) and password against stored informations in the 'project3.db' database 'users' table. Firstly, this code connects to the database and fetches user inputs. It then checks the database whether a user with the provided username or email exists. If found, it checks whether the entered password matches the stored hashed password using a 'check_hash' method. If the match is successful, it clears the input fields, and navigates to the "MenuScreen." On the other hand, if the password does not match or no user is found, it displays a pop-up dialog letting users that the login attempt was unsuccessful.
+
 
 ```.py
 def verify_and_reset_password(self):
@@ -242,17 +243,74 @@ def update_password(self):
 
     update_query = "UPDATE users SET password = ? WHERE email = ?"
     params = (hashed_new_password, user_email)
-
-    try:
-        main.db.update(query=update_query, params=params)
-        self.show_popup("Success", "Password updated successfully.")
-    except Exception as e:
-        self.show_popup("Error", f"An error occurred during update: {e}")
+    # code continues
 ```
 
 This code updates a user's password. It first checks if the new password and its confirmation match. If they do, it hashes the new password and updates it in the 'users' database for the user with the corresponding email. If the update is successful, it shows a success pop-up message; if not, it displays an pop-up message showing an error.
 
 
+## Success Criteria 2: The application includes a financial tracking feature that accurately records and monitors the company's transactions such as expenses an income.
+
+
+
+
+## Success Criteria 3: The application implements a resource management system within the app that specifically visualize the materials that are available for making pillows.
+
+I fulfilled this success criteria by implementing three key functions: 'get_inventory_items' to fetch current material stock from the 'project3.db' database 'inventory' table, 'generate_inventory_ui' to create a user interface that displays these materials and their quantities, and 'update_inventory' to adjust stock levels of materials based on user interactions.
+
+### 'get_inventory_items' functions
+
+```.py
+def get_inventory_items(self):
+    query = "SELECT id, material_name, quantity FROM inventory"
+    results = main.db.search(query=query, multiple=True)
+    inventory_items = []
+    for result in results:
+        inventory_items.append({
+            'id': result[0],
+            'material_name': result[1],
+            'quantity': result[2]
+        })
+    return inventory_items
+```
+This code retrieves the list of materials from the 'inventory' table. It runs a query to select the ID, name, and quantity of each material. For each item found, it adds a dictionary with these informations to a list, then returns. This process gathers current stock information and ready to be displayed or managed within the application.
+
+### 'generate_inventory_ui' functions
+
+```.py
+def generate_inventory_ui(self):
+    self.ids.inventory_list.clear_widgets()
+    for item in self.inventory_items:
+        material_id = item['id']
+        material_name = item['material_name']
+        quantity = item['quantity']
+        # Code continues
+```
+
+This code creates the UI (user interface) for the 'InventoryScreen', showing each material's name and quantity that are stored in 'inventory' table. For each item, it sets up a horizontal layout with a label for the material name, a text field showing the quantity, and buttons to increase or decrease the quantity. When these buttons are clicked, they updates the inventory, adjusting the stock levels accordingly.
+
+
+### 'update_inventory' functions
+
+```.py
+def update_inventory(self, material_id, change):
+    # Update inventory quantity in the database
+    current_quantity = [item['quantity'] for item in self.inventory_items if item['id'] == material_id][0]
+    new_quantity = max(0, current_quantity + change)  # Ensure quantity doesn't go below 0
+    update_query = "UPDATE inventory SET quantity = ? WHERE id = ?"
+    main.db.update(update_query, (new_quantity, material_id))
+    # Code continues
+```
+
+This code updates the quantity of a specific material in the inventory database. It first finds the current quantity of the material by fetching its ID, then calculates the new quantity by adding the change (which can be positive or negative) and it ensures the quantity never goes below 0. Then, it updates the database with the new quantity for the material. Finally, it refreshes the inventory items and the user interface to show the updated values.
+
+
+## Success Criteria 4: The application provides detailed information about order and material management by using tables and graphs such as pie charts and bar graphs.
+
+
+
+
+## Success Criteria 5: The application allows the user to search for orders by materials. 
 
 
 
