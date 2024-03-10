@@ -154,29 +154,131 @@ This is the flow diagram for the code that lets you switch between hiding and sh
 6. if statements
 7. for loop
 
-## Python file: "main.py"
+## Development
 
-### Setting up the file:
+
+## Success Criteria 1: The website keeps users separate with an encrypted login system and even if they forget their passwords, the users can change their passwords if they remember security questions.
+
+I supports the criteria by incorporating an encrypted login system that hashes passwords, offers a method for password recovery using security questions, and allows updates of user passwords. The 'verify_login' functions allows users to login the application. The 'get_hash' and 'check_hash' functions indicate the use of encryption for password management, while the 'verify_and_reset_password' and 'update_password' methods provide the way for password recovery and resetting.
+
+### 'get_hash' function
 
 ```.py
-from kivy.core.window import Window
-from kivymd.app import MDApp
-from kivymd.uix.button import MDFlatButton
-from kivymd.uix.label import MDLabel
-from kivymd.uix.menu import MDDropdownMenu
-from kivymd.uix.screen import MDScreen
-from kivymd.uix.dialog import MDDialog
-from kivymd.uix.datatables import MDDataTable
-from kivy.metrics import dp
-from kivymd.uix.textfield import MDTextField
-from kivymd.uix.button import MDRaisedButton
-from kivymd.uix.boxlayout import MDBoxLayout
-from kivy.uix.image import Image
-from Project.my_library import DatabaseBridge
-import sqlite3
-import matplotlib.pyplot as plt
-import os
+hasher = sha256_crypt.using(rounds = 30000)
+
+def get_hash(text:str):
+    return hasher.hash(text)
 ```
+This code creates a function get_hash that uses SHA-256 algorithm to turn a given input (text) into a secure, hashed string, doing so through 30,000 rounds of processing.
+
+
+### 'check_hash' function
+
+```.py
+hasher = sha256_crypt.using(rounds = 30000)
+
+def check_hash(input_hash, text):
+    return hasher.verify(text, input_hash)
+```
+This code defines a function 'check_hash' that checks if a given input (text) matches a provided hashed string using the SHA-256 algorithm with 30,000 rounds of hashing.
+
+
+### 'verify_login' function
+
+```.py
+def verify_login(self):
+    db_name = "project3.db"
+    main.db = DatabaseBridge(db_name)
+
+    username_or_email = self.ids.login_username_or_email.text.strip()
+    password = self.ids.login_password.text.strip()
+
+    self.ids.login_username_or_email.error = False
+    self.ids.login_password.error = False
+
+    query = "SELECT password FROM users WHERE username = ? OR email = ?"
+    params = (username_or_email, username_or_email)
+
+
+    result = main.db.search(query=query, params=params)
+
+
+    if result:
+        stored_hashed_password = result[0]
+        print(stored_hashed_password, password)
+        if check_hash(stored_hashed_password, password):
+            print("Login successful")
+            self.parent.current = "MenuScreen"
+
+            self.ids.login_username_or_email.text = ""
+            self.ids.login_password.text = ""
+        else:
+            # If password doesn't match
+            print("Login failed")
+            self.show_login_failed_dialog()
+    else:
+        # If no matching user is found
+        print("Login failed")
+        self.show_login_failed_dialog()
+```
+
+The verify_login method allow users to login to the application by validating their username (or email) and password against stored informations in the 'project3.db' database 'users' table. Firstly, this code connects to the database and fetches user inputs. It then checks the database whether a user with the provided username or email exists. If found, it checks whether the entered password matches the stored hashed password using a 'check_hash' method. If the match is successful, it clears the input fields, and navigates to the "MenuScreen." On the other hand, if the password does not match or no user is found, it displays a pop-up dialog letting users that the login attempt was unsuccessful. This process ensures secure and user-friendly login functionality within the application.
+
+```.py
+def verify_and_reset_password(self):
+    user_email = self.ids.email.text.strip()
+    favorite_teacher = self.ids.favorite_teacher_answer.text.strip()
+
+    # Assuming your database has a column for the security question answer
+    query = "SELECT * FROM users WHERE email = ? AND favorite_teacher_answer = ?"
+    params = (user_email, favorite_teacher)
+    result = main.db.search(query=query, params=params)
+
+    if result:
+        # Assuming ResetPasswordScreen is accessible via self.manager
+        reset_screen = self.manager.get_screen('ResetPasswordScreen')
+        reset_screen.user_email = user_email  # Pass the email to the ResetPasswordScreen
+        self.parent.current = "ResetPasswordScreen"
+    else:
+        self.show_verification_failed_dialog()
+```
+
+This code allows a user to reset their password by verifying their email and the answer to a security question (their favorite teacher during elementary school). If the information matches a record in the database, it directs the user to a "ResetPasswordScreen" where they can set a new password. If the verification fails, it shows an error pop-up dialog saying that your email and security question does not match.
+
+
+### 'update_password' function
+
+```.py
+def update_password(self):
+    user_email = self.user_email.strip()
+    new_password = self.ids.new_pass.text.strip()
+    confirm_password = self.ids.confirm_pass.text.strip()
+
+    self.clear_input_fields()
+
+    if not new_password or new_password != confirm_password:
+        self.show_popup("Error", "Passwords do not match.")
+        return
+
+    # Hash the new password here
+    hashed_new_password = get_hash(new_password)
+
+    update_query = "UPDATE users SET password = ? WHERE email = ?"
+    params = (hashed_new_password, user_email)
+
+    try:
+        main.db.update(query=update_query, params=params)
+        self.show_popup("Success", "Password updated successfully.")
+    except Exception as e:
+        self.show_popup("Error", f"An error occurred during update: {e}")
+```
+
+This code updates a user's password. It first checks if the new password and its confirmation match. If they do, it hashes the new password and updates it in the 'users' database for the user with the corresponding email. If the update is successful, it shows a success pop-up message; if not, it displays an pop-up message showing an error.
+
+
+
+
+
 
 
 
