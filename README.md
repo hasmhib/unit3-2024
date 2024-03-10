@@ -79,7 +79,7 @@ This is the flow diagram for the code that is designed to show a bar graph of cu
 
 
 ## Flow Diagram
-<img width="max" alt="Screenshot 2024-03-10 at 4 34 13 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/52760fd0-c9f9-404e-aa9e-483cbd92eef6">
+<img width="max" alt="Screenshot 2024-03-10 at 10 23 55 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/75f83466-f942-4538-8786-1f1aa8be012d">
 
 Fig. 6 _This is the flow diagram of the 'update_password'_
 
