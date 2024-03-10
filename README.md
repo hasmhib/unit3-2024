@@ -336,6 +336,7 @@ def show_pie_chart(self):
 This code generates a pie chart to visualize financial data and displays it within the user interface. It first checks if a directory for storing pie charts exists, creating one if necessary. Then, it prepares a file path for the new pie chart. Using financial data gets back by 'get_finance_data', it creates the pie chart with percentages, create titles "Finance Distribution", and saves the chart to the plt.savefig path to adjust to the app. Finally, it clears any existing pie charts in the chart container and adds the newly created pie chart image for display.
 
 <img width="max" alt="Screenshot 2024-03-11 at 0 39 02 AM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/1ee24916-4856-43d3-9a36-1acac4fd81b3">
+
 Fig. 8: _An example of pie charts shown in "FinanceScreen"_
 
 
@@ -384,6 +385,7 @@ def show_bar_graph(self):
 This code creates a bar graph showing the distribution of pillow materials based on customer preferences and displays it in the application. It first ensures a directory for storing bar graphs exists, then generates a path for the new graph. It sets initial counts of various pillow materials to zero and queries the 'customers' table to update these counts based on actual customer data that are stored in the database. Using this data, it plots a bar graph with materials on the x-axis and customer counts on the y-axis, saves the graph to the 'bar_graph' path, and then updates the application's UI to display the new graph by clearing previous images in the chart container and adding the new bar graph image.
 
 <img width="max" alt="Screenshot 2024-03-11 at 0 48 04 AM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/8194d969-4fc8-4898-aae5-a50a61cca65b">
+
 Fig. 9: _An example of bar graphs shown in "FinanceScreen"_
 
 
