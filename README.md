@@ -402,7 +402,41 @@ This code updates a table in the application with customer order details by fetc
 
 ## Success Criteria 5: The application allows the user to search for orders by materials. 
 
+I fulfilled this criteria by implementing the "OrderScreen" class and inside 'search_by_material' function. This function enables users to specify a material and outputs all orders that used that particular material in pop-up dialog, showcasing the application's capability to filter and display order information based on material criteria.
 
+
+### 'search_by_material' function _(class OrderScreen)_
+
+```.py
+def search_by_material(self):
+    material = self.ids.search_material.text
+    if not material or material == 'Select Material':
+        self.show_popup("Error", "Please select a material to search.")
+        return
+
+    # Execute the search query
+    results = main.db.search(
+        "SELECT customer_name, customer_phone_number FROM customers WHERE customer_pillow_material = ?",
+        (material,))
+
+    # Ensure results is a list (even for no or single result)
+    if results is None or isinstance(results, int):
+        # This line adjusts for unexpected 'None' or 'int' return types
+        results = []
+    elif isinstance(results, tuple):
+        results = [results]  # Convert single tuple result to a list of tuples
+
+    if results:
+        self.show_search_results(results)
+    else:
+        self.show_popup("Search Results", "No orders found for the selected material.")
+```
+
+This function retrieves the selected material from the user interface, choose the materials, and then queries the 'customers' table for orders that match the specified material. Based on the query results, it either displays the matching orders or let the user know that no orders were found for the selected material, effectively allowing users to filter orders by material type.
+
+<img width="max" alt="Screenshot 2024-03-11 at 1 13 18 AM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/bfe33163-b4d2-47a8-93d8-d152e6e1c12e">
+
+Fig. 10: _An example of 'search_by_material' shown in "OrderScreen"_
 
 
 # Criteria D: Functionlaity
