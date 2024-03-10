@@ -198,22 +198,7 @@ def verify_login(self):
 
     result = main.db.search(query=query, params=params)
 
-    if result:
-        stored_hashed_password = result[0]
-        if check_hash(stored_hashed_password, password):
-            print("Login successful")
-            self.parent.current = "MenuScreen"
-
-            self.ids.login_username_or_email.text = ""
-            self.ids.login_password.text = ""
-        else:
-            # If password doesn't match
-            print("Login failed")
-            self.show_login_failed_dialog()
-    else:
-        # If no matching user is found
-        print("Login failed")
-        self.show_login_failed_dialog()
+    # code continues
 ```
 
 The verify_login method allow users to login to the application by validating their username (or email) and password against stored informations in the 'project3.db' database 'users' table. Firstly, this code connects to the database and fetches user inputs. It then checks the database whether a user with the provided username or email exists. If found, it checks whether the entered password matches the stored hashed password using a 'check_hash' method. If the match is successful, it clears the input fields, and navigates to the "MenuScreen." On the other hand, if the password does not match or no user is found, it displays a pop-up dialog letting users that the login attempt was unsuccessful. This process ensures secure and user-friendly login functionality within the application.
