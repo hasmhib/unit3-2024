@@ -193,19 +193,13 @@ def verify_login(self):
     username_or_email = self.ids.login_username_or_email.text.strip()
     password = self.ids.login_password.text.strip()
 
-    self.ids.login_username_or_email.error = False
-    self.ids.login_password.error = False
-
     query = "SELECT password FROM users WHERE username = ? OR email = ?"
     params = (username_or_email, username_or_email)
 
-
     result = main.db.search(query=query, params=params)
-
 
     if result:
         stored_hashed_password = result[0]
-        print(stored_hashed_password, password)
         if check_hash(stored_hashed_password, password):
             print("Login successful")
             self.parent.current = "MenuScreen"
@@ -229,13 +223,11 @@ def verify_and_reset_password(self):
     user_email = self.ids.email.text.strip()
     favorite_teacher = self.ids.favorite_teacher_answer.text.strip()
 
-    # Assuming your database has a column for the security question answer
     query = "SELECT * FROM users WHERE email = ? AND favorite_teacher_answer = ?"
     params = (user_email, favorite_teacher)
     result = main.db.search(query=query, params=params)
 
     if result:
-        # Assuming ResetPasswordScreen is accessible via self.manager
         reset_screen = self.manager.get_screen('ResetPasswordScreen')
         reset_screen.user_email = user_email  # Pass the email to the ResetPasswordScreen
         self.parent.current = "ResetPasswordScreen"
@@ -280,7 +272,10 @@ This code updates a user's password. It first checks if the new password and its
 
 
 
+# Criteria D: Functionlaity
 
+## Demonstration video
+https://drive.google.com/file/d/1tz2VrezD6CRP31pPIW8PfwshkYrk4gmb/view?usp=drive_link 
 
 
 
