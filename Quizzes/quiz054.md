@@ -20,10 +20,10 @@ class RainDrops:
             result += "Plong"
 
         if not divisible:
-            return f"{n} is not divisible by 3, 5, or 7, so the result should be {n}"
+            return f"{n} is not divisible by 3, 5, or 7, so the result would be {n}"
 
         divisible_num = ' and ' .join(divisible)
-        return f"{n} is divisible by {divisible_num}, so the result should be {result}"
+        return f"{n} is divisible by {divisible_num}, so the result would be {result}"
 
 
 print(RainDrops.pour(28))
@@ -32,7 +32,7 @@ print(RainDrops.pour(34))
 ```
 
 ## Proof of work
-<img width="max" alt="Screenshot 2024-03-21 at 4 59 51 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/71399e6e-6266-4b26-8ff2-76bc3457b502">
+<img width="max" alt="Screenshot 2024-03-21 at 5 00 40 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/d7f9c593-92dc-4c3d-8a5b-430f19e064b6">
 
 
 ## UML Diagram
