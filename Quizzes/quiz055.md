@@ -32,3 +32,6 @@ print(darts_game.score(8, 8))
 ## Proof of work
 <img width="max" alt="Screenshot 2024-03-30 at 0 07 12 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/c605cd8b-fcf7-44fe-a759-302f3241f035">
 
+## UML Diagram
+![image](https://github.com/hasmhib/unit3-2024/assets/142870448/246adc48-5fbd-478b-87bd-08fd344c1f94)
+
