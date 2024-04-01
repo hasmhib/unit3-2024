@@ -6,7 +6,7 @@
 ```py
 def secret_handshake(code):
     if not 1 <= code <= 31:
-        return "Code must be between 1 and 31"
+        print("Code must be between 1 and 31") 
 
     actions = ["wink", "double blink", "close your eyes", "jump"]
     handshake = []
@@ -22,6 +22,7 @@ def secret_handshake(code):
     return handshake
 
 print(secret_handshake(9))
+
 ```
 
 ## Proof of work
