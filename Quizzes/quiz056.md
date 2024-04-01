@@ -28,3 +28,5 @@ print(secret_handshake(9))
 ## Proof of work
 <img width="max" alt="Screenshot 2024-03-30 at 2 08 39 PM" src="https://github.com/hasmhib/unit3-2024/assets/142870448/3a7c7af8-3a21-4b32-8061-5890a93215e5">
 
+## Flow diagram
+![image](https://github.com/hasmhib/unit3-2024/assets/142870448/d75b2bb9-de6c-4368-a7eb-bb7c49f7806d)
